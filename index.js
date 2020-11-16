@@ -10,6 +10,7 @@ app.use(express.json())
 const cors = require('cors')
 
 app.use(cors())
+app.use(express.static('build'))
 
 const morganLogger = (request, response, next) => {
     console.log('Method:', request.method)
@@ -72,7 +73,6 @@ app.get('/api/persons', (request, response) => {
       } else {
         response.status(404).send()
       }
-    
   })
 
 
